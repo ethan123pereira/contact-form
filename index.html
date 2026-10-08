@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+  <meta name="description" content="Send us a message and we will reply within one working day.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <aside class="intro">
+      <h1>Let's talk.</h1>
+      <p class="lead">Questions, feedback or project ideas &mdash; send them over and we will reply within one working day.</p>
+
+      <ul class="details">
+        <li>
+          <span class="label">Email</span>
+          <a href="mailto:hello@example.com">hello@example.com</a>
+        </li>
+        <li>
+          <span class="label">Phone</span>
+          <a href="tel:+910000000000">+91 00000 00000</a>
+        </li>
+        <li>
+          <span class="label">Hours</span>
+          <span>Mon to Sat, 10 am to 6 pm</span>
+        </li>
+      </ul>
+    </aside>
+
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Send a message</h2>
+
+      <form id="contactForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" maxlength="80" required>
+            <p class="error" id="name-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" maxlength="120" required>
+            <p class="error" id="email-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="phone">Phone <span class="optional">(optional)</span></label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="15" inputmode="tel">
+            <p class="error" id="phone-error" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="subject">Topic</label>
+            <select id="subject" name="subject" required>
+              <option value="" selected disabled>Choose one</option>
+              <option>General question</option>
+              <option>Feedback</option>
+              <option>Support</option>
+              <option>Collaboration</option>
+            </select>
+            <p class="error" id="subject-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" maxlength="1000" required></textarea>
+          <div class="meta">
+            <p class="error" id="message-error" role="alert"></p>
+            <span class="counter" id="counter">0 / 1000</span>
+          </div>
+        </div>
+
+        <!-- Spam trap: real users never see or fill this -->
+        <div class="trap" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn">
+          <span class="btn-text">Send message</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
